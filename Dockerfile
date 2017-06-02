@@ -20,7 +20,7 @@ RUN cd koel && echo DB_PASSWORD= >> .env
 
 RUN cd koel && composer install
 RUN cd koel && npm install
-RUN cd koel && npm install node-sass
+RUN cd koel && npm install node-sass@4.0.0
 RUN cd koel && php artisan koel:init
 
 CMD cd koel && php artisan serve --host 0.0.0.0
