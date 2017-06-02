@@ -17,7 +17,9 @@ RUN cd koel && echo DB_DATABASE=koel >> .env
 RUN cd koel && echo DB_USERNAME=root >> .env
 RUN cd koel && echo DB_PASSWORD=pass >> .env
 
-RUN cd koel && cat .env
+#RUN cd koel && cat .env
 
 RUN cd koel && composer install
 RUN cd koel && php artisan koel:init
+
+CMD cd koel && php artisan serve --host 0.0.0.0
