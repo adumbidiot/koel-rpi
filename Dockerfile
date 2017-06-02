@@ -7,7 +7,8 @@ RUN curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/
 
 RUN git clone https://github.com/phanan/koel
 
-RUN cd koel && sed -i 's/ADMIN_EMAIL=/ADMIN_EMAIL=nathanieldaniel@outlook.com/g' .env
+RUN cd koel && touch .env
+RUN cd koel && sed -i 's/ADMIN_EMAIL=/ADMIN_EMAIL=nathaniel.daniel23@outlook.com/g' .env
 RUN cd koel && sed -i 's/ADMIN_NAME=/ADMIN_NAME=admin/g' .env
 RUN cd koel && sed -i 's/ADMIN_PASSWORD=/ADMIN_PASSWORD=admin-pass/g' .env
 RUN cd koel && sed -i 's/DB_CONNECTION=/DB_CONNECTION=mysql/g' .env
