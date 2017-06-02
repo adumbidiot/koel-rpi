@@ -15,7 +15,7 @@ RUN cd koel && echo DB_CONNECTION=mysql >> .env
 RUN cd koel && echo DB_HOST=192.168.1.11 >> .env
 RUN cd koel && echo DB_DATABASE=koel >> .env
 RUN cd koel && echo DB_USERNAME=root >> .env
-RUN cd koel && echo DB_PASSWORD=pass >> .env
+RUN cd koel && echo DB_PASSWORD= >> .env
 
 #RUN cd koel && cat .env
 
