@@ -17,7 +17,7 @@ RUN cd koel && sed -i 's/DB_DATABASE=homestead/DB_DATABASE=koel/g' .env
 RUN cd koel && sed -i 's/DB_USERNAME=homestead/DB_USERNAME=root/g' .env
 RUN cd koel && sed -i 's/DB_PASSWORD=secret/DB_PASSWORD=pass/g' .env
 
-RUN cd koel && ls .env
+RUN cd koel && cat .env
 
 RUN cd koel && composer install
 RUN cd koel && php artisan koel:init
