@@ -16,8 +16,7 @@ RUN cd koel && echo DB_HOST=192.168.1.11 >> .env
 RUN cd koel && echo DB_DATABASE=koel >> .env
 RUN cd koel && echo DB_USERNAME=root >> .env
 RUN cd koel && echo DB_PASSWORD= >> .env
-
-#RUN cd koel && cat .env
+RUN cd koel && echo APP_MAX_SCAN_TIME=600 >> .env
 
 RUN cd koel && composer install
 RUN cd koel && npm install
