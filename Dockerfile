@@ -1,7 +1,7 @@
 FROM hypriot/rpi-node
 
 RUN apt-get update
-RUN apt-get install git curl php5 php5-curl php5-mysql yarn
+RUN apt-get install git curl php5 php5-curl php5-mysql
 
 RUN curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -20,6 +20,7 @@ RUN cd koel && echo DB_PASSWORD= >> .env
 #RUN cd koel && cat .env
 
 RUN cd koel && composer install
+RUN cd koel && npm install
 RUN cd koel && php artisan koel:init
 
 CMD cd koel && php artisan serve --host 0.0.0.0
