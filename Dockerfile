@@ -1,4 +1,4 @@
-FROM hypriot/rpi-node
+FROM hypriot/rpi-node:latest
 
 RUN apt-get update
 RUN apt-get install git curl php5 php5-curl php5-mysql
@@ -16,10 +16,11 @@ RUN cd koel && echo DB_HOST=192.168.1.11 >> .env
 RUN cd koel && echo DB_DATABASE=koel >> .env
 RUN cd koel && echo DB_USERNAME=root >> .env
 RUN cd koel && echo DB_PASSWORD= >> .env
-RUN cd koel && echo APP_MAX_SCAN_TIME=600 >> .env
+#RUN cd koel && echo APP_MAX_SCAN_TIME=600 >> .env
 
 RUN cd koel && composer install
 RUN cd koel && npm install
+RUN cd koel && npm install node-sass
 RUN cd koel && php artisan koel:init
 
 CMD cd koel && php artisan serve --host 0.0.0.0
