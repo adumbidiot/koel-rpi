@@ -1,7 +1,7 @@
-FROM resin/rpi-raspbian
+FROM hypriot/rpi-node
 
 RUN apt-get update
-RUN apt-get install git curl php5 php5-curl php5-mysql
+RUN apt-get install git curl php5 php5-curl php5-mysql yarn
 
 RUN curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
